@@ -1,4 +1,5 @@
 const asyncHanlder = require("express-async-handler");
+const AppError = require(`../middleware/appError`)
 const Product = require(`../models/product`);
 // -------------------------------- Operator Filters -------------------------------
 const operatorMap = {

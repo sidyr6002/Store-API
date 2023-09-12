@@ -1,7 +1,8 @@
+const AppError = require(`./appError`);
+
 const invalidPathHandler = (req, res, next) => {
-    const error = new Error('Invalid path');
-    error.statusCode = 404; // Not Found
-    next(error); // Pass the error to the error handler
+    const error = new AppError(404, "Invalid path");
+    next(error);
 };
 
-module.exports = invalidPathHandler
+module.exports = invalidPathHandler;
