@@ -8,11 +8,10 @@ const app = express();
 app.use(express.json());
 const invalidPathHandler = require(`./middleware/invalidPathMiddleware`);
 const errorHandler = require(`./middleware/errorHandlerMiddleware`);
-const e = require("express");
 
 // ------------------ IP and PORT ----------------------------
 const hostAdd = process.env.HOST_ADDRESS;
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 // ---------------------- API --------------------------------
 app.get("/", (req, res) => {

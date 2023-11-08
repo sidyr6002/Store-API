@@ -1,12 +1,14 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-const connectionURL = process.env.MONGODB_URL
-
-const connectDB = () => {
-  return mongoose.connect(connectionURL, {
+const connectionURL = process.env.MONGODB_URL;
+const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  })
-}
+    useCreateIndex: true,
+};
 
-module.exports = connectDB
+const connectDB = () => {
+    return mongoose.connect(connectionURL, options);
+};
+
+module.exports = connectDB;

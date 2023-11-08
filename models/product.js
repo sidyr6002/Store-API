@@ -3,7 +3,7 @@ const mongoose = require(`mongoose`);
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
-        require: [true, "Product name must be provided"],
+        require: [true, "Product name must be provided"]
     },
     price: {
         type: Number,
@@ -31,4 +31,6 @@ const productSchema = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model("Product", productSchema);
+productSchema.index({ name : "text"})
+
+module.exports = mongoose.model("Product", productSchema);;
